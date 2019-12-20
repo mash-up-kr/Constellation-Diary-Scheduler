@@ -1,4 +1,4 @@
-package com.kancho.scheduler.horoscope.domain
+package com.kancho.scheduler.horoscope.domain.horoscope
 
 import org.springframework.data.jpa.repository.JpaRepository
 
