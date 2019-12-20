@@ -1,4 +1,4 @@
-package com.kancho.scheduler.dailyquestion.domain
+package com.kancho.scheduler.dailyquestion.domain.dailyquestion
 
 import javax.persistence.*
 
