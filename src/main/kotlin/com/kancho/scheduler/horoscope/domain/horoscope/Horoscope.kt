@@ -26,15 +26,19 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Int,
     var content: String = content
         private set
 
+    @Enumerated(EnumType.STRING)
     var stylist: Stylist = stylist
         private set
 
+    @Enumerated(EnumType.ORDINAL)
     var number: Number = number
         private set
 
+    @Enumerated(EnumType.STRING)
     var word: Word = word
         private set
 
+    @Enumerated(EnumType.STRING)
     var exercise: Exercise = exercise
         private set
 
