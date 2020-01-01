@@ -1,4 +1,4 @@
-package com.kancho.scheduler.horoscope.service
+package com.kancho.scheduler.horoscope.application
 
 interface HoroscopeCrawling {
 

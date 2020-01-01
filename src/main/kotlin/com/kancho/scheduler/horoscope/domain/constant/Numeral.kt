@@ -1,6 +1,6 @@
 package com.kancho.scheduler.horoscope.domain.constant
 
-enum class Number(val value: String) {
+enum class Numeral(val value: String) {
     ONE("1"),
     TWO("2"),
     THREE("3"),

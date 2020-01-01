@@ -1,23 +1,23 @@
 package com.kancho.scheduler.horoscope.domain.horoscope
 
 import com.kancho.scheduler.horoscope.domain.constant.Exercise
-import com.kancho.scheduler.horoscope.domain.constant.Number
+import com.kancho.scheduler.horoscope.domain.constant.Numeral
 import com.kancho.scheduler.horoscope.domain.constant.Stylist
 import com.kancho.scheduler.horoscope.domain.constant.Word
 import javax.persistence.*
 
 @Entity
 @Table(name = "horoscopes")
-class Horoscope private constructor(id: Long? = null, constellationsId: Int,
+class Horoscope private constructor(id: Long? = null, constellationsId: Long,
                                     date: String, content: String, stylist: Stylist,
-                                    number: Number, word: Word, exercise: Exercise) {
+                                    numeral: Numeral, word: Word, exercise: Exercise) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = id
         private set
 
-    var constellationsId: Int = constellationsId
+    var constellationsId: Long = constellationsId
         private set
 
     var date: String = date
@@ -31,7 +31,7 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Int,
         private set
 
     @Enumerated(EnumType.ORDINAL)
-    var number: Number = number
+    var numeral: Numeral = numeral
         private set
 
     @Enumerated(EnumType.STRING)
@@ -42,8 +42,8 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Int,
     var exercise: Exercise = exercise
         private set
 
-    constructor(constellationsId: Int, date: String, content: String,
-                stylist: Stylist, number: Number, word: Word, exercise: Exercise) :
+    constructor(constellationsId: Long, date: String, content: String,
+                stylist: Stylist, numeral: Numeral, word: Word, exercise: Exercise) :
             this(null, constellationsId,
-                    date, content, stylist, number, word, exercise)
+                    date, content, stylist, numeral, word, exercise)
 }
