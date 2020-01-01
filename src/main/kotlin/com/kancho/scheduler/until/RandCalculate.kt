@@ -4,11 +4,13 @@ import java.util.*
 
 
 const val START_INDEX: Int = 0
-const val LOSE_LAST_SIZE: Int = 1
 
 
 fun randIndex(size: Int):
-        Int = randIndex(START_INDEX, size - LOSE_LAST_SIZE)
+        Int = randIndex(START_INDEX, size)
 
-fun randIndex(from: Int, to: Int):
-        Int = Random().nextInt(to - from) + from
+fun randIndex(from: Int, to: Int): Int {
+    val rand = Random()
+    rand.setSeed(System.currentTimeMillis())
+    return rand.nextInt(to - from) + from
+}
