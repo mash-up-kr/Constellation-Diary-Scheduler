@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service
 import javax.transaction.Transactional
 
 @Service
-class HoroscopeService(val horoscopeCrawling: HoroscopeCrawling,
-                       val horoscopeDesignation: HoroscopeDesignation,
-                       val constellationRepository: ConstellationRepository,
-                       val horoscopeRepository: HoroscopeRepository) {
+class HoroscopeService(private val horoscopeCrawling: HoroscopeCrawling,
+                       private val horoscopeDesignation: HoroscopeDesignation,
+                       private val constellationRepository: ConstellationRepository,
+                       private val horoscopeRepository: HoroscopeRepository) {
     @Transactional
     fun designateHoroscope() {
         val constellations: List<Constellation> = constellationRepository.findAll()
