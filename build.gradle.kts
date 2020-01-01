@@ -23,9 +23,7 @@ dependencies {
 	implementation ("com.h2database:h2:1.4.197")
 	runtimeOnly("mysql:mysql-connector-java")
 	implementation ("org.jsoup:jsoup:1.11.3")
-	testImplementation("org.springframework.boot:spring-boot-starter-test") {
-		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
-	}
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<Test> {

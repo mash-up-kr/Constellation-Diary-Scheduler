@@ -41,4 +41,3 @@ spring:
 
 spring:
   profiles: test
-Secret.Key: 반갑습니다. 이것은 테스트용 키입니다. 아주 길어야 하거든요.

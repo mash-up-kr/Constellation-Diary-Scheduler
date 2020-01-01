@@ -1,9 +1,11 @@
 package com.kancho.scheduler.horoscope.infrastructure
 
-import com.kancho.scheduler.horoscope.service.HoroscopeCrawling
+import com.kancho.scheduler.horoscope.application.HoroscopeCrawling
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.springframework.stereotype.Component
 
+@Component
 class JsoupHoroscopeCrawling() : HoroscopeCrawling {
 
     override fun crawling(url: String): String {
