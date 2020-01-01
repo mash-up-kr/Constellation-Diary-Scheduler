@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "constellations")
 class Constellation private constructor(id: Long? = null, name: String,
                                         date: String, description: String,
-                                        imageUrl: String, iconUrl: Int) {
+                                        crawlingUrl: String) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,13 +22,8 @@ class Constellation private constructor(id: Long? = null, name: String,
     var description: String = description
         private set
 
-    var imageUrl: String = imageUrl
-        private set
+    var crawlingUrl: String = crawlingUrl
 
-    var iconUrl: Int = iconUrl
-        private set
-
-
-    constructor(name: String, date: String, description: String, imageUrl: String, iconUrl: Int)
-            : this(null, name, date, description, imageUrl, iconUrl)
+    constructor(name: String, date: String, description: String, crawlingUrl: String)
+            : this(null, name, date, description, crawlingUrl)
 }

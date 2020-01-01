@@ -1,4 +1,6 @@
+---
 spring:
+  profiles: local
   datasource:
     platform: h2
     hikari:
@@ -18,3 +20,25 @@ spring:
       hibernate:
         format_sql: true
 
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://${MYSQL_URL}?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: ${USER_NAME}
+    password: ${USER_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+---
+
+spring:
+  profiles: test
+Secret.Key: 반갑습니다. 이것은 테스트용 키입니다. 아주 길어야 하거든요.
