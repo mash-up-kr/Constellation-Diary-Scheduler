@@ -30,7 +30,8 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Long,
     var stylist: Stylist = stylist
         private set
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "number")
     var numeral: Numeral = numeral
         private set
 
