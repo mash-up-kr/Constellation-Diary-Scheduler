@@ -20,7 +20,7 @@ class HoroscopeService(private val horoscopeCrawling: HoroscopeCrawling,
 
         for (c in constellations) {
             val content = horoscopeCrawling.crawling(c.crawlingUrl)
-            val horoscope = horoscopeDesignation.designate(c.id!!, content);
+            val horoscope = horoscopeDesignation.designate(c.id!!, content)
             horoscopes.add(horoscope)
         }
 
