@@ -5,8 +5,7 @@ import javax.persistence.*
 @Entity
 @Table(name = "constellations")
 class Constellation private constructor(id: Long? = null, name: String,
-                                        date: String, description: String,
-                                        crawlingUrl: String) {
+                                        date: String, crawlingUrl: String) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +18,8 @@ class Constellation private constructor(id: Long? = null, name: String,
     var date: String = date
         private set
 
-    var description: String = description
-        private set
-
     var crawlingUrl: String = crawlingUrl
 
-    constructor(name: String, date: String, description: String, crawlingUrl: String)
-            : this(null, name, date, description, crawlingUrl)
+    constructor(name: String, date: String, crawlingUrl: String)
+            : this(null, name, date, crawlingUrl)
 }
