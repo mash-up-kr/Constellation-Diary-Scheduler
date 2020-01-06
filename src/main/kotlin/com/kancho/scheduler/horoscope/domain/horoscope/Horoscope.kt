@@ -23,6 +23,7 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Long,
     var date: String = date
         private set
 
+    @Lob
     var content: String = content
         private set
 
