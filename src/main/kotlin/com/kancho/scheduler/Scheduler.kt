@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 class Scheduler(private val horoscopeController: HoroscopeController,
                 private val dailyQuestionController: DailyQuestionController) {
 
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = "0 0 14 * * *")
     fun startJob() {
         horoscopeController.horoscopeCrawling()
         dailyQuestionController.designateDailyQuestion()
