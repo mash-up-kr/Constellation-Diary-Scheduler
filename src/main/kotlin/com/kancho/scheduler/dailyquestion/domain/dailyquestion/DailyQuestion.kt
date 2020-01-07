@@ -1,12 +1,12 @@
 package com.kancho.scheduler.dailyquestion.domain.dailyquestion
 
 import com.kancho.scheduler.common.LocalDatePersistenceConverter
-import java.time.LocalDate
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
 @Table(name = "daily_questions")
-class DailyQuestion private constructor(id: Long? = null, date: LocalDate, content: String) {
+class DailyQuestion private constructor(id: Long? = null, date: LocalDateTime, content: String) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,11 @@ class DailyQuestion private constructor(id: Long? = null, date: LocalDate, conte
         private set
 
     @Convert(converter = LocalDatePersistenceConverter::class)
-    var date: LocalDate = date
+    var date: LocalDateTime = date
         private set
 
     var content: String = content
         private set
 
-    constructor(date: LocalDate, content: String) : this(null, date, content)
+    constructor(date: LocalDateTime, content: String) : this(null, date, content)
 }
