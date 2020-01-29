@@ -1,6 +1,6 @@
 package com.kancho.scheduler.horoscope.application
 
-import com.kancho.scheduler.horoscope.domain.constellation.Constellation
+import com.kancho.scheduler.horoscope.domain.constellation_crawling.Constellation
 import com.kancho.scheduler.horoscope.domain.horoscope.Horoscope
 import org.assertj.core.api.Assertions
 import org.junit.Before
