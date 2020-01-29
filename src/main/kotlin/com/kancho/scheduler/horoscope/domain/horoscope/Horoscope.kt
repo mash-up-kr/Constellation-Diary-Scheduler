@@ -1,16 +1,13 @@
 package com.kancho.scheduler.horoscope.domain.horoscope
 
 import com.kancho.scheduler.common.LocalDatePersistenceConverter
-import com.kancho.scheduler.horoscope.domain.constant.Exercise
-import com.kancho.scheduler.horoscope.domain.constant.Numeral
-import com.kancho.scheduler.horoscope.domain.constant.Stylist
-import com.kancho.scheduler.horoscope.domain.constant.Word
+import com.kancho.scheduler.horoscope.domain.constant.*
 import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
 @Table(name = "horoscopes")
-class Horoscope private constructor(id: Long? = null, constellationsId: Long,
+class Horoscope private constructor(id: Long? = null, constellation: Constellation,
                                     date: LocalDate, content: String, stylist: Stylist,
                                     numeral: Numeral, word: Word, exercise: Exercise) {
 
@@ -19,7 +16,8 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Long,
     var id: Long? = id
         private set
 
-    var constellationsId: Long = constellationsId
+    @Enumerated(EnumType.STRING)
+    var constellation: Constellation = constellation
         private set
 
     @Convert(converter = LocalDatePersistenceConverter::class)
@@ -47,8 +45,8 @@ class Horoscope private constructor(id: Long? = null, constellationsId: Long,
     var exercise: Exercise = exercise
         private set
 
-    constructor(constellationsId: Long, date: LocalDate, content: String,
+    constructor(constellation: Constellation, date: LocalDate, content: String,
                 stylist: Stylist, numeral: Numeral, word: Word, exercise: Exercise) :
-            this(null, constellationsId,
+            this(null, constellation,
                     date, content, stylist, numeral, word, exercise)
 }
